@@ -13,7 +13,8 @@ namespace Company.PresentationLayer.Controllers
         }
         public IActionResult Index()
         {
-            return View();
+            var companyList = _companyService.List();
+            return View(companyList);
         }
         [HttpGet]
         public IActionResult Create()

@@ -1,7 +1,5 @@
-﻿@{
-	ViewData["Title"] = "Index";
-}
-
+﻿@using Company.Model
+@model List<CompanyModel>
 <h1>Company List</h1>
 
 <div class="row">
@@ -15,5 +13,17 @@
 			<th>Address</th>
 			<th>Action</th>
 		</tr>
+		@foreach(var company in Model)
+		{
+			<tr>
+				<td>@company.Name </td>
+				<td>@company.Email </td>
+				<td>@company.Mobile </td>
+				<td>@company.GST </td>
+				<td>@company.PAN </td>
+				<td>@company.Address </td>
+				<td>Edit </td>
+			</tr>
+		}
 	</table>
 </div>
